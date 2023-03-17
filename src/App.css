@@ -22,6 +22,7 @@ main {
 p {
   width: 30ch;
   font-size: larger;
+  color: gray;
 }
 .dice-container {
   display: grid;
@@ -41,6 +42,10 @@ p {
   cursor: pointer;
   font-size: 1.5rem;
 }
+.isHeld {
+  background-color: #59e391;
+}
+
 .roll {
   width: 100px;
   height: 50px;
