@@ -8,11 +8,13 @@ function App() {
   function allNewDice() {
     let newDice = [];
     for (let i = 0; i < 10; i++) {
-      newDice.push(Math.ceil(Math.random() * 6));
+      newDice.push({ value: Math.ceil(Math.random() * 6), isHeld: false });
     }
     return newDice;
   }
-  const diceElements = dice.map((num) => <Dice value={num} key={nanoid()} />);
+  const diceElements = dice.map(({ value, isHeld }) => (
+    <Dice value={value} key={nanoid()} />
+  ));
 
   function rollDice() {
     setDice(allNewDice());
