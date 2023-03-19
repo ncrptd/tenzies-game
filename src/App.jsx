@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Dice from './components/Dice';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
-
+import Dice from './components/Dice';
+import Timer from './components/Timer';
 function App() {
   const [dice, setDice] = useState(allNewDice());
 
   const [tenzies, setTenzies] = useState(false);
+
+  const [start, setStart] = useState(false);
+  const [highScore, setHighScore] = useState('00:00:00');
 
   useEffect(() => {
     const allHeld = dice.every((dice) => dice.isHeld);
@@ -70,9 +73,15 @@ function App() {
       });
     });
   }
+  function handleStart() {
+    setStart(!start);
+  }
   return (
     <div className="app">
       {tenzies && <Confetti />}
+      {start && <Timer />}
+      {start && <p className="highScore">High Score: {highScore} </p>}
+
       <main>
         <h1>Tenzies</h1>
         <p>
@@ -80,9 +89,16 @@ function App() {
           current value between rolls.
         </p>
         <div className="dice-container">{diceElements}</div>
-        <button className="roll" onClick={rollDice}>
-          {tenzies ? 'Reset Game' : 'Roll'}
-        </button>
+        {!start || (
+          <button className="btn" onClick={rollDice}>
+            {tenzies ? 'Reset Game' : 'Roll'}
+          </button>
+        )}
+        {start || (
+          <button className="btn" onClick={handleStart}>
+            Start
+          </button>
+        )}
       </main>
     </div>
   );

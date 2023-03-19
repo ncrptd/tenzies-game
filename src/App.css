@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
 }
 body {
   background-color: #0b2434;
@@ -18,7 +21,6 @@ main {
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  text-align: center;
 }
 p {
   width: 32ch;
@@ -48,7 +50,7 @@ p {
   background-color: #59e391;
 }
 
-.roll {
+.btn {
   /* width: 100px;
   height: 50px; */
   padding: 10px 20px;
@@ -62,15 +64,19 @@ p {
   cursor: pointer;
   font-size: 1.9rem;
 }
-.roll:active {
+.btn:active {
   transform: scale(0.88);
 }
 
 img {
-  /* width: 40px;
-  height: 40px; */
   width: 80%;
 }
+
+.timer p,
+.highScore {
+  color: white;
+}
+
 @media only screen and (min-width: 768px) {
   main {
     min-width: 450px;
@@ -79,5 +85,8 @@ img {
   .dice {
     width: 70px;
     height: 70px;
+  }
+  .timer {
+    font-size: 2rem;
   }
 }
