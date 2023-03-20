@@ -5,7 +5,7 @@ export default function Dice(props) {
       onClick={props.holdDice}
     >
       <img
-        src={`public/assets/dice/dice 0${props.value}.svg`}
+        src={`dist/assets/dice/dice 0${props.value}.svg`}
         alt={props.value}
       />
     </div>
