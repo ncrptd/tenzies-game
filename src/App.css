@@ -51,8 +51,6 @@ p {
 }
 
 .btn {
-  /* width: 100px;
-  height: 50px; */
   padding: 10px 20px;
   text-transform: capitalize;
   background-color: #5035ff;
@@ -72,9 +70,15 @@ img {
   width: 80%;
 }
 
-.timer p,
-.highScore {
+.timer-container,
+.highScore-container {
   color: white;
+}
+.highScore {
+  color: yellowgreen;
+}
+.timer {
+  color: rgb(245, 29, 29);
 }
 
 @media only screen and (min-width: 768px) {
@@ -85,6 +89,13 @@ img {
   .dice {
     width: 70px;
     height: 70px;
+  }
+  .timer-container,
+  .highScore-container {
+    font-size: 20px;
+  }
+  .highScore {
+    font-size: 2rem;
   }
   .timer {
     font-size: 2rem;
