@@ -4,8 +4,10 @@ export default function Dice(props) {
       className={props.isHeld ? 'dice isHeld' : 'dice'}
       onClick={props.holdDice}
     >
-      <img src={`src/assets/dice/dice 0${props.value}.svg`} alt="" />
-      {/* <h2>{props.value}</h2> */}
+      <img
+        src={`public/assets/dice/dice 0${props.value}.svg`}
+        alt={props.value}
+      />
     </div>
   );
 }
